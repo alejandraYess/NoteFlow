@@ -1,0 +1,32 @@
+# NoteFlow — Reglas para Cursor
+
+## Proyecto
+App móvil de productividad (notas de texto, checklists, ideas) con React Native, Expo SDK y TypeScript.
+
+## Stack (no sustituir sin motivo)
+- Expo Router (navegación en `app/`)
+- Zustand + AsyncStorage (estado y persistencia)
+- @shopify/flash-list (listas)
+- Zod (validación de formularios)
+- Una librería UI: React Native Paper o Gluestack UI (la elegida en el proyecto)
+- expo-haptics (feedback táctil)
+
+## Estructura de carpetas
+- `app/` — rutas (tabs: notas, checklists, ideas; modales; `[id].tsx`)
+- `components/` — UI reutilizable (ej. `components/items/`)
+- `store/` — Zustand (`notesStore.ts`)
+- `types/` — interfaces TypeScript
+- `constants/` — tema (`theme.ts`)
+- `docs/` — documentación
+
+## Convenciones
+- TypeScript estricto; tipos en `types/index.ts` (Note, ChecklistNote, IdeaNote, AnyNote).
+- Type guards en runtime: `'items' in note` para checklists, `'tags' in note` para ideas.
+- Componentes funcionales; nombres en PascalCase para componentes, camelCase para funciones.
+- Textos de UI y docs en español.
+- Cambios mínimos; no añadir librerías ni features fuera del enunciado (búsqueda, archivar, Reanimated) salvo que se pida.
+
+## Restricciones
+- No usar HTML ni componentes web (`div`, `span`); usar View, Text, etc.
+- No usar Redux ni Context API para estado global si Zustand ya está definido.
+- Respetar modo claro/oscuro con `useColorScheme` y `constants/theme.ts`.
