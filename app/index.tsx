@@ -1,23 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { Redirect } from 'expo-router';
 
-export default function Home() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>NoteFlow</Text>
-      <Text>Proyecto Expo listo</Text>
-    </View>
-  );
+export default function Index() {
+  return <Redirect href="/notas" />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-});
